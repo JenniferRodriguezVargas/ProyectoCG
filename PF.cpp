@@ -531,9 +531,17 @@ int main() {
 	Model M3("resources/objects/M3/M3.obj");
 	Model M4("resources/objects/M4/M4.obj");
 	Model M5("resources/objects/M5/M5.obj");
-
+	//**************** MODELOS PARA LA ANIMACIONES COMPLEJAS ************************
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/Arm.dae");
 	animacionPersonaje.initShaders(animShader.ID);
+	Model cabezaBuzz("resources/objects/Buzz/buzzlightyHead.obj");
+	Model hipBuzz("resources/objects/Buzz/buzzlightyHip.obj");
+	Model BrazoIzqBuzz("resources/objects/Buzz/buzzlightyLeftArm.obj");
+	
+	
+	
+	
+	
 	//*****************************************************************************
 
 	//Inicialización de KeyFrames
@@ -1085,7 +1093,19 @@ int main() {
 		//TERMINE DE IMPORTAR LOS OBJETOS ESTATICOS Y EL MODELO EN GENERAL DE LA PLAZA COMERCIAL
 
 		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
-
+		Model cabezaBuzz("resources/objects/Buzz/buzzlightyHead.obj");
+		Model hipBuzz("resources/objects/Buzz/buzzlightyHip.obj");
+		Model BrazoIzqBuzz("resources/objects/Buzz/buzzlightyLeftArm.obj");
+		//BuzzLightYear cabeza
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
+		staticShader.setMat4("model", modelOp);
+		cabezaBuzz.Draw(staticShader);
+		//BuzzLightYear 
+		staticShader.setMat4("model", modelOp);
+		hipBuzz.Draw(staticShader);
+		//BuzzLightYear 
+		staticShader.setMat4("model", modelOp);
+		BrazoIzqBuzz.Draw(staticShader);
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.75f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.2f));
