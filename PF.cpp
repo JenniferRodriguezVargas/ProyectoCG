@@ -534,9 +534,9 @@ int main() {
 	//**************** MODELOS PARA LA ANIMACIONES COMPLEJAS ************************
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/Arm.dae");
 	animacionPersonaje.initShaders(animShader.ID);
-	Model cabezaBuzz("resources/objects/Buzz/buzzlightyHead.obj");
-	Model hipBuzz("resources/objects/Buzz/buzzlightyHip.obj");
-	Model BrazoIzqBuzz("resources/objects/Buzz/buzzlightyLeftArm.obj");
+	Model CabezaBuzz("resources/objects/CabezaBuzz/CabezaBuzz.obj");
+	Model TorsoBuzz("resources/objects/TorsoBuzz/TorsoBuzz.obj");
+	Model ColaBuzz("resources/objects/ColaBuzz/ColaBuzz.obj");
 	
 	
 	
@@ -719,7 +719,7 @@ int main() {
 
 		// ********* DIBUJO DEL CENTRO COMERCIAL*************
 		// MUROS - MuroA parte izq vista superio
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));//A todo .obj agregar esta translacion  
+		/*modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));//A todo .obj agregar esta translacion  
 		staticShader.setMat4("model", modelOp);
 		MuroA.Draw(staticShader);
 		//MuroB parte trasera vista superior
@@ -1089,23 +1089,23 @@ int main() {
 		//Mujer 5
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		staticShader.setMat4("model", modelOp);
-		M5.Draw(staticShader);
+		M5.Draw(staticShader);*/
 		//TERMINE DE IMPORTAR LOS OBJETOS ESTATICOS Y EL MODELO EN GENERAL DE LA PLAZA COMERCIAL
 
 		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
-		Model cabezaBuzz("resources/objects/Buzz/buzzlightyHead.obj");
-		Model hipBuzz("resources/objects/Buzz/buzzlightyHip.obj");
-		Model BrazoIzqBuzz("resources/objects/Buzz/buzzlightyLeftArm.obj");
+		
 		//BuzzLightYear cabeza
-		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
 		staticShader.setMat4("model", modelOp);
-		cabezaBuzz.Draw(staticShader);
+		CabezaBuzz.Draw(staticShader);
 		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
 		staticShader.setMat4("model", modelOp);
-		hipBuzz.Draw(staticShader);
+		TorsoBuzz.Draw(staticShader);
 		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
 		staticShader.setMat4("model", modelOp);
-		BrazoIzqBuzz.Draw(staticShader);
+		ColaBuzz.Draw(staticShader);
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.75f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.2f));
