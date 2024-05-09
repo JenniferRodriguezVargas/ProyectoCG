@@ -1084,6 +1084,9 @@ int main() {
 		M5.Draw(staticShader);
 		//TERMINE DE IMPORTAR LOS OBJETOS ESTATICOS Y EL MODELO EN GENERAL DE LA PLAZA COMERCIAL
 
+		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
+
+
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.75f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.2f));
 		staticShader.setMat4("model", modelOp);
