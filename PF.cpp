@@ -438,7 +438,7 @@ int main() {
 	Model piso("resources/objects/piso/piso.obj");
 	//**********************  DISEÑO PROYECTO  *****************************//
 
-	Model MuroA("resources/objects/MuroA/muroA.obj");
+	/*Model MuroA("resources/objects/MuroA/muroA.obj");
 	Model MuroB("resources/objects/MuroB/MuroB.obj");
 	Model MuroC("resources/objects/MuroC/MuroC.obj");
 	Model SepLoc("resources/objects/SepLoc/SepLoc.obj");
@@ -530,18 +530,28 @@ int main() {
 	Model M2("resources/objects/M2/M2.obj");
 	Model M3("resources/objects/M3/M3.obj");
 	Model M4("resources/objects/M4/M4.obj");
-	Model M5("resources/objects/M5/M5.obj");
+	Model M5("resources/objects/M5/M5.obj");*/
 	//**************** MODELOS PARA LA ANIMACIONES COMPLEJAS ************************
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/Arm.dae");
 	animacionPersonaje.initShaders(animShader.ID);
 	Model CabezaBuzz("resources/objects/CabezaBuzz/CabezaBuzz.obj");
 	Model TorsoBuzz("resources/objects/TorsoBuzz/TorsoBuzz.obj");
 	Model ColaBuzz("resources/objects/ColaBuzz/ColaBuzz.obj");
-	
-	
-	
-	
-	
+	Model AlaDerBuzz("resources/objects/AlaDerBuzz/AlaDerBuzz.obj");
+	Model AlaIzqBuzz("resources/objects/AlaIzqBuzz/AlaIzqBuzz.obj");
+	Model AnteDer("resources/objects/AnteDer/AnteDer.obj");
+	Model AnteIzq("resources/objects/AnteIzq/AnteIzq.obj");
+	Model BrazoDer("resources/objects/BrazoDer/BrazoDer.obj");
+	Model BrazoIzq("resources/objects/BrazoIzq/BrazoIzq.obj");
+	Model ManoDer("resources/objects/ManoDer/ManoDer.obj");
+	Model ManoIzq("resources/objects/ManoIzq/ManoIzq.obj");
+	Model PieDer("resources/objects/PieDer/PieDer.obj");
+	Model PieIzq("resources/objects/PieIzq/PieIzq.obj");
+	Model PiernaDer("resources/objects/PiernaDer/PiernaDer.obj");
+	Model PiernaIzq("resources/objects/PiernaIzq/PiernaIzq.obj");
+	Model RodillaDer("resources/objects/RodillaDer/RodillaDer.obj");
+	Model RodillaIzq("resources/objects/RodillaIzq/RodillaIzq.obj"); 
+
 	//*****************************************************************************
 
 	//Inicialización de KeyFrames
@@ -1095,17 +1105,74 @@ int main() {
 		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
 		
 		//BuzzLightYear cabeza
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", modelOp);
 		CabezaBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", modelOp);
 		TorsoBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.9f, 1.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0, 1.0f));
 		staticShader.setMat4("model", modelOp);
 		ColaBuzz.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		AlaDerBuzz.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		AlaIzqBuzz.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		AnteDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		AnteIzq.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		BrazoDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		BrazoIzq.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		ManoDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		ManoIzq.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		PieDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		PieIzq.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		PiernaDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		PiernaIzq.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		RodillaDer.Draw(staticShader);
+		//BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		RodillaIzq.Draw(staticShader);
+
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.75f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.2f));
