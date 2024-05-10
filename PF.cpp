@@ -1117,127 +1117,127 @@ int main() {
 		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
 		
 		// **************** BuzzLightYear cabeza  *****************************
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		CabezaBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		TorsoBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		ColaBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AlaDerBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AlaIzqBuzz.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AnteDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AnteIzq.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoIzq.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		ManoDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		ManoIzq.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PieDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PieIzq.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaIzq.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		RodillaDer.Draw(staticShader);
 		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		RodillaIzq.Draw(staticShader);
 		//****************  CHASIS FORD MUSTANG  ****************** 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		Chasis.Draw(staticShader);
 		//Cofre FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		cofre.Draw(staticShader);
 		// puerta izq FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		puertaizq.Draw(staticShader);
 		// puerta der FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		puertader.Draw(staticShader);
 		// llanta der FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		llantader.Draw(staticShader);
 		// llanta izq FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		llantaizq.Draw(staticShader);
 		// llanta tras der FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		llantatrasder.Draw(staticShader);
 		// llanta tras izq FORD MUSTANG 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", modelOp);
 		llantatrasizq.Draw(staticShader);
