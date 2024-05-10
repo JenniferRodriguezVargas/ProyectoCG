@@ -534,6 +534,7 @@ int main() {
 	//**************** MODELOS PARA LA ANIMACIONES COMPLEJAS ************************
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/Arm.dae");
 	animacionPersonaje.initShaders(animShader.ID);
+	// ANIMACION BUZZ
 	Model CabezaBuzz("resources/objects/CabezaBuzz/CabezaBuzz.obj");
 	Model TorsoBuzz("resources/objects/TorsoBuzz/TorsoBuzz.obj");
 	Model ColaBuzz("resources/objects/ColaBuzz/ColaBuzz.obj");
@@ -551,6 +552,17 @@ int main() {
 	Model PiernaIzq("resources/objects/PiernaIzq/PiernaIzq.obj");
 	Model RodillaDer("resources/objects/RodillaDer/RodillaDer.obj");
 	Model RodillaIzq("resources/objects/RodillaIzq/RodillaIzq.obj"); 
+	// ANIMACION CARRO
+	Model Chasis("resources/objects/Chasis/Chasis.obj");
+	Model cofre("resources/objects/cofre/cofre.obj");
+	Model puertaizq("resources/objects/door_izq/door_izq.obj");
+	Model puertader("resources/objects/door_der/door_der.obj");
+	Model llantader("resources/objects/llantader/llantader.obj");
+	Model llantaizq("resources/objects/llantaizq/llantaizq.obj");
+	Model llantatrasder("resources/objects/llantatrasder/llantatrasder.obj");
+	Model llantatrasizq("resources/objects/llantatrasizq/llantatrasizq.obj");
+
+
 
 	//*****************************************************************************
 
@@ -1104,7 +1116,7 @@ int main() {
 
 		//COMIENZA LA IMPORTACION DE LOS MODELOS COMPLEJOS
 		
-		//BuzzLightYear cabeza
+		// **************** BuzzLightYear cabeza  *****************************
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", modelOp);
 		CabezaBuzz.Draw(staticShader);
@@ -1172,7 +1184,38 @@ int main() {
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", modelOp);
 		RodillaIzq.Draw(staticShader);
-
+		//****************  CHASIS FORD MUSTANG  ****************** 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		Chasis.Draw(staticShader);
+		// Cofre FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		cofre.Draw(staticShader);
+		// puerta izq FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		puertaizq.Draw(staticShader);
+		// puerta der FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		puertader.Draw(staticShader);
+		// llanta der FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		llantader.Draw(staticShader);
+		// llanta izq FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		llantaizq.Draw(staticShader);
+		// llanta tras der FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		llantatrasder.Draw(staticShader);
+		// llanta tras izq FORD MUSTANG 
+		//modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", modelOp);
+		llantatrasizq.Draw(staticShader);
 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.75f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(0.2f));
