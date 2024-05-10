@@ -1,5 +1,5 @@
 # 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
-# File Created: 10.05.2024 11:26:56
+# File Created: 10.05.2024 12:03:24
 
 newmtl resh__spec_
 	Ns 20.0000
@@ -16,6 +16,34 @@ newmtl resh__spec_
 	map_Kd resh.png
 	map_d resh.png
 
+newmtl body
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka body.tga
+	map_Kd body.tga
+
+newmtl plastic
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.5900 0.5900 0.5900
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka plastic.png
+	map_Kd plastic.png
+
 newmtl Matte__FF0F0F0F__spec_
 	Ns 46.4386
 	Ni 1.5000
@@ -28,7 +56,7 @@ newmtl Matte__FF0F0F0F__spec_
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
 
-newmtl lights_lod0
+newmtl vehiclelights128__RR_
 	Ns 20.0000
 	Ni 1.5000
 	d 1.0000
@@ -37,10 +65,10 @@ newmtl lights_lod0
 	illum 2
 	Ka 0.2000 0.2000 0.2000
 	Kd 1.0000 1.0000 1.0000
-	Ks 0.1160 0.1160 0.1160
+	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka vehiclelights.png
-	map_Kd vehiclelights.png
+	map_Ka vehiclelights.tga
+	map_Kd vehiclelights.tga
 
 newmtl nodamage_lod0__spec_
 	Ns 55.0000
@@ -56,6 +84,32 @@ newmtl nodamage_lod0__spec_
 	map_Ka nodamage_lod0.png
 	map_Kd nodamage_lod0.png
 
+newmtl Matte__FFCCCCCC__spec_
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl vehiclelights128__FR_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.0000 1.0000 0.7800
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka vehiclelights.tga
+	map_Kd vehiclelights.tga
+
 newmtl Matte__FF1E1E1E__spec_
 	Ns 18.8539
 	Ni 1.5000
@@ -68,6 +122,128 @@ newmtl Matte__FF1E1E1E__spec_
 	Ks 0.1520 0.1520 0.1520
 	Ke 0.0000 0.0000 0.0000
 
+newmtl vehiclelights__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.0000 0.5000 1.0000
+	Ks 0.2600 0.3280 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka vehiclelights.png
+	map_Kd vehiclelights.png
+
+newmtl carpback__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka carpback.png
+	map_Kd carpback.png
+
+newmtl carplate__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka carplate.png
+	map_Kd carplate.png
+
+newmtl mustang_misc__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka mustang_misc.png
+	map_Kd mustang_misc.png
+
+newmtl misc_body__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka misc_body.png
+	map_Kd misc_body.png
+
+newmtl Matte__FF0C0C0C__spec_
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.1529 0.1529 0.1529
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Matte__FFFF0000__spec_
+	Ns 47.8136
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl undercarriage__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka undercarriage.png
+	map_Kd undercarriage.png
+
+newmtl lights_lod0
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1160 0.1160 0.1160
+	Ke 0.0000 0.0000 0.0000
+	map_Ka vehiclelights.png
+	map_Kd vehiclelights.png
+
 newmtl vehiclelights128
 	Ns 20.0000
 	Ni 1.5000
@@ -76,21 +252,7 @@ newmtl vehiclelights128
 	Tf 1.0000 1.0000 1.0000 
 	illum 2
 	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 0.6900 0.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka vehiclelights.tga
-	map_Kd vehiclelights.tga
-
-newmtl vehiclelights128__FR_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.0000 1.0000 0.7800
+	Kd 1.0000 1.0000 1.0000
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
 	map_Ka vehiclelights.tga
@@ -108,6 +270,18 @@ newmtl Matte__66666666__trans_
 	Ks 0.9400 0.9400 0.9400
 	Ke 0.0000 0.0000 0.0000
 
+newmtl windshield
+	Ns 30.0000
+	Ni 1.5000
+	d 0.4200
+	Tr 0.5800
+	Tf 0.4200 0.4200 0.4200 
+	illum 2
+	Ka 0.0471 0.1059 0.1725
+	Kd 0.0471 0.1059 0.1725
+	Ks 1.1300 1.1300 1.1300
+	Ke 0.0000 0.0000 0.0000
+
 newmtl HL_Glass
 	Ns 31.0000
 	Ni 1.5000
@@ -120,7 +294,7 @@ newmtl HL_Glass
 	Ks 0.8400 0.8400 0.8400
 	Ke 0.0000 0.0000 0.0000
 
-newmtl plastic
+newmtl interior_lod0__spec_
 	Ns 20.0000
 	Ni 1.5000
 	d 1.0000
@@ -128,13 +302,13 @@ newmtl plastic
 	Tf 1.0000 1.0000 1.0000 
 	illum 2
 	Ka 0.2000 0.2000 0.2000
-	Kd 0.5900 0.5900 0.5900
-	Ks 0.4000 0.4000 0.4000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka plastic.png
-	map_Kd plastic.png
+	map_Ka interior_lod0.png
+	map_Kd interior_lod0.png
 
-newmtl mustang_misc__spec_
+newmtl interior_lod0__spec_trans_
 	Ns 20.0000
 	Ni 1.5000
 	d 1.0000
@@ -145,20 +319,34 @@ newmtl mustang_misc__spec_
 	Kd 0.8000 0.8000 0.8000
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka mustang_misc.png
-	map_Kd mustang_misc.png
+	map_Ka interior_lod0.png
+	map_Kd interior_lod0.png
 
-newmtl Matte__FF0C0C0C__spec_
-	Ns 46.4386
+newmtl Matte__51595959__trans_
+	Ns 45.0000
+	Ni 1.5000
+	d 0.2300
+	Tr 0.7700
+	Tf 0.2300 0.2300 0.2300 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.3500 0.3500 0.3500
+	Ks 0.8100 0.8100 0.8100
+	Ke 0.0000 0.0000 0.0000
+
+newmtl interior_emissive_lod0
+	Ns 20.0000
 	Ni 1.5000
 	d 1.0000
 	Tr 0.0000
 	Tf 1.0000 1.0000 1.0000 
 	illum 2
 	Ka 0.2000 0.2000 0.2000
-	Kd 0.1529 0.1529 0.1529
+	Kd 0.8000 0.8000 0.8000
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
+	map_Ka interior_emissive_lod0.png
+	map_Kd interior_emissive_lod0.png
 
 newmtl Matte__FF676767__spec_
 	Ns 68.0000
@@ -266,34 +454,6 @@ newmtl cloth_brightgrey
 	map_Ka cloth_brightgrey.png
 	map_Kd cloth_brightgrey.png
 
-newmtl interior_lod0__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
-	Ks 0.0000 0.0000 0.0000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka interior_lod0.png
-	map_Kd interior_lod0.png
-
-newmtl interior_emissive_lod0
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka interior_emissive_lod0.png
-	map_Kd interior_emissive_lod0.png
-
 newmtl digital_gauge
 	Ns 20.0000
 	Ni 1.5000
@@ -319,163 +479,3 @@ newmtl Matte__FF2D2D2D
 	Kd 0.1800 0.1800 0.1800
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
-
-newmtl interior_lod0__spec_trans_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka interior_lod0.png
-	map_Kd interior_lod0.png
-
-newmtl Matte__51595959__trans_
-	Ns 45.0000
-	Ni 1.5000
-	d 0.2300
-	Tr 0.7700
-	Tf 0.2300 0.2300 0.2300 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.3500 0.3500 0.3500
-	Ks 0.8100 0.8100 0.8100
-	Ke 0.0000 0.0000 0.0000
-
-newmtl body
-	Ns 46.4386
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka body.tga
-	map_Kd body.tga
-
-newmtl vehiclelights128__RR_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka vehiclelights.tga
-	map_Kd vehiclelights.tga
-
-newmtl Matte__FFCCCCCC__spec_
-	Ns 46.4386
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-
-newmtl windshield
-	Ns 30.0000
-	Ni 1.5000
-	d 0.4200
-	Tr 0.5800
-	Tf 0.4200 0.4200 0.4200 
-	illum 2
-	Ka 0.0471 0.1059 0.1725
-	Kd 0.0471 0.1059 0.1725
-	Ks 1.1300 1.1300 1.1300
-	Ke 0.0000 0.0000 0.0000
-
-newmtl vehiclelights__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.0000 0.5000 1.0000
-	Ks 0.2600 0.3280 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka vehiclelights.png
-	map_Kd vehiclelights.png
-
-newmtl carpback__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka carpback.png
-	map_Kd carpback.png
-
-newmtl carplate__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka carplate.png
-	map_Kd carplate.png
-
-newmtl misc_body__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka misc_body.png
-	map_Kd misc_body.png
-
-newmtl Matte__FFFF0000__spec_
-	Ns 47.8136
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 0.0000 0.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-
-newmtl undercarriage__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka undercarriage.png
-	map_Kd undercarriage.png
