@@ -1238,6 +1238,7 @@ int main() {
 		TorsoBuzz.Draw(staticShader);
 		//cabeza  
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
+		tmp2 = modelOp = glm::rotate(modelOp, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0));//para que pueda rotar
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		CabezaBuzz.Draw(staticShader);
