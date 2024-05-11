@@ -1,5 +1,5 @@
 # 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
-# File Created: 10.05.2024 12:03:24
+# File Created: 10.05.2024 15:49:00
 
 newmtl resh__spec_
 	Ns 20.0000
@@ -164,72 +164,6 @@ newmtl carplate__spec_
 	map_Ka carplate.png
 	map_Kd carplate.png
 
-newmtl mustang_misc__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka mustang_misc.png
-	map_Kd mustang_misc.png
-
-newmtl misc_body__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka misc_body.png
-	map_Kd misc_body.png
-
-newmtl Matte__FF0C0C0C__spec_
-	Ns 46.4386
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.1529 0.1529 0.1529
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-
-newmtl Matte__FFFF0000__spec_
-	Ns 47.8136
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 0.0000 0.0000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-
-newmtl undercarriage__spec_
-	Ns 20.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.2000 0.2000 0.2000
-	Kd 0.8000 0.8000 0.8000
-	Ks 0.4000 0.4000 0.4000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka undercarriage.png
-	map_Kd undercarriage.png
-
 newmtl lights_lod0
 	Ns 20.0000
 	Ni 1.5000
@@ -252,7 +186,7 @@ newmtl vehiclelights128
 	Tf 1.0000 1.0000 1.0000 
 	illum 2
 	Ka 0.2000 0.2000 0.2000
-	Kd 1.0000 1.0000 1.0000
+	Kd 1.0000 0.6900 0.0000
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
 	map_Ka vehiclelights.tga
@@ -347,6 +281,32 @@ newmtl interior_emissive_lod0
 	Ke 0.0000 0.0000 0.0000
 	map_Ka interior_emissive_lod0.png
 	map_Kd interior_emissive_lod0.png
+
+newmtl mustang_misc__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka mustang_misc.png
+	map_Kd mustang_misc.png
+
+newmtl Matte__FF0C0C0C__spec_
+	Ns 46.4386
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.1529 0.1529 0.1529
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
 
 newmtl Matte__FF676767__spec_
 	Ns 68.0000
@@ -479,3 +439,43 @@ newmtl Matte__FF2D2D2D
 	Kd 0.1800 0.1800 0.1800
 	Ks 0.4000 0.4000 0.4000
 	Ke 0.0000 0.0000 0.0000
+
+newmtl misc_body__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka misc_body.png
+	map_Kd misc_body.png
+
+newmtl Matte__FFFF0000__spec_
+	Ns 47.8136
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 1.0000 0.0000 0.0000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl undercarriage__spec_
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.4000 0.4000 0.4000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka undercarriage.png
+	map_Kd undercarriage.png
