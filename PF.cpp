@@ -41,8 +41,8 @@ unsigned int SCR_HEIGHT = 600;
 GLFWmonitor* monitors;
 GLuint VBO[3], VAO[3], EBO[3];
 
-//Camera
-Camera camera(glm::vec3(0.0f, 80.0f, 300.0f)); //PIDE LA POSICION INICIAL DENTRO DEL MUNDO VIRTUAL 
+//Camera																			//De lejos para ver animacion carro
+Camera camera(glm::vec3(0.0f, 5.0f, 50.0f)); //PIDE LA POSICION INICIAL DENTRO DEL MUNDO VIRTUAL 0.0f, 80.0f, 300.0f
 float MovementSpeed = 0.1f;
 GLfloat lastX = SCR_WIDTH / 2.0f,
 		lastY = SCR_HEIGHT / 2.0f;
@@ -99,31 +99,46 @@ bool
 
 
 //Keyframes (Manipulación y dibujo)
-float	
-		posX = 0.0f,
-		posY = 0.0f,
-		posZ = 0.0f,
-		rotRodIzq = 0.0f,
-		giroMonito = 0.0f,
-		rotCofre = 0.0f;
-float	
-		incX = 0.0f,
-		incY = 0.0f,
-		incZ = 0.0f,
-		rotRodIzqInc = 0.0f,
-		giroMonitoInc = 0.0f;
+float	posX = 0.0f,
+			posY = 0.0f,
+			posZ = 0.0f,
+			rotRodIzq = 0.0f,
+			rotRodIzqInc,
+			giroMonito = 0.0f,
+			giroBrazoIzq = 0.0f, //ya
+			
+			giroBrazoDer = 0.0f, //1
+			rotRodDer = 0.0f, //2
+			giroCabeza = 0.0f; //3
 
-#define MAX_FRAMES 9
-int i_max_steps = 60;
+		float	incX = 0.0f,
+			incY = 0.0f,
+			incZ = 0.0f,
+			rotInc = 0.0f,
+			giroMonitoInc = 0.0f,
+			BrazoIzqInc = 0.0f,
+			
+			BrazoDerInc = 0.0f,
+			rotDerInc = 0.0f,
+			giroCabInc = 0.0;
+
+// MAX_FRAMES= Arreglo que guarda cuadros clave DEPENDIENDO DE LAS QUE SE VAYANA A UTILIZAR
+#define MAX_FRAMES 35
+int i_max_steps = 80;//CANTIDAD DE CUADROS INTERMEDIOS QUE EL SISTEMA VA A CALCULAR
 int i_curr_steps = 0;
 typedef struct _frame
 {
+	//Variables para GUARDAR Key Frames
 	//Variables para GUARDAR Key Frames
 	float posX;		//Variable para PosicionX
 	float posY;		//Variable para PosicionY
 	float posZ;		//Variable para PosicionZ
 	float rotRodIzq;
 	float giroMonito;
+	float giroBrazoIzq; //Variable para guardar, deben tener el mismo nombre
+	float giroBrazoDer; //1
+	float rotRodDer; //2
+	float giroCabeza; //3
 
 }FRAME;
 
@@ -144,6 +159,15 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].rotRodIzq = rotRodIzq;
 	KeyFrame[FrameIndex].giroMonito = giroMonito;
 
+	KeyFrame[FrameIndex].giroBrazoIzq = giroBrazoIzq;//quiero guardar en mi arreglo la propiedad y va a guardar lo que en ese momento se dibuja
+
+	KeyFrame[FrameIndex].giroBrazoDer = giroBrazoDer;
+	KeyFrame[FrameIndex].rotRodDer = rotRodDer;
+	KeyFrame[FrameIndex].giroCabeza = giroCabeza;
+
+	std::cout << "Posicion X = " << posX << std::endl;
+	std::cout << "Posicion Z = " << posX << std::endl;
+
 	FrameIndex++;
 }
 
@@ -155,6 +179,10 @@ void resetElements(void)
 
 	rotRodIzq = KeyFrame[0].rotRodIzq;
 	giroMonito = KeyFrame[0].giroMonito;
+
+	giroBrazoIzq = KeyFrame[0].giroBrazoIzq; //sustituye lo que tiene en ese moemetno el excenario para pasarle los momentos clave
+	rotRodDer = KeyFrame[0].rotRodDer;
+	giroCabeza = KeyFrame[0].giroCabeza;
 }
 
 void interpolation(void)
@@ -162,9 +190,16 @@ void interpolation(void)
 	incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
 	incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
 	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
-
-	rotRodIzqInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
+	//playIndex= indica cual es el cuadro inicial y +1 representa el valor final
+	//i_max_steps= # de cuadros intermedios
+	rotInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
 	giroMonitoInc = (KeyFrame[playIndex + 1].giroMonito - KeyFrame[playIndex].giroMonito) / i_max_steps;
+	//Realiza la operacion de incrementos
+	BrazoIzqInc = (KeyFrame[playIndex + 1].giroBrazoIzq - KeyFrame[playIndex].giroBrazoIzq) / i_max_steps;
+
+	BrazoDerInc = (KeyFrame[playIndex + 1].giroBrazoDer - KeyFrame[playIndex].giroBrazoDer) / i_max_steps;
+	rotDerInc = (KeyFrame[playIndex + 1].rotRodDer - KeyFrame[playIndex].rotRodDer) / i_max_steps;
+	giroCabInc = (KeyFrame[playIndex + 1].giroCabeza - KeyFrame[playIndex].giroCabeza) / i_max_steps;
 
 }
 
@@ -244,8 +279,13 @@ void animate(void)
 			posY += incY;
 			posZ += incZ;
 
-			//rotRodIzq += rotRodIzqInc;
+			rotRodIzq += rotInc;
 			giroMonito += giroMonitoInc;
+			giroBrazoIzq += BrazoIzqInc;
+
+			giroBrazoDer += BrazoDerInc;
+			rotRodDer += rotDerInc;
+			giroCabeza += giroCabInc;
 
 			i_curr_steps++;
 		}
@@ -445,7 +485,7 @@ int main() {
 	monitors = glfwGetPrimaryMonitor();
 	getResolution();
 
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Pratica 6 2024-2", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "PROYECTO FINAL JRV", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -643,6 +683,7 @@ int main() {
 		KeyFrame[i].posZ = 0;
 		KeyFrame[i].rotRodIzq = 0;
 		KeyFrame[i].giroMonito = 0;
+		KeyFrame[i].giroBrazoIzq = 0;
 	}
 
 
@@ -757,13 +798,7 @@ int main() {
 		modelOp = glm::rotate(modelOp, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", modelOp);
 		animacionPersonaje.Draw(animShader);
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Segundo Personaje Animacion
-		// -------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+		
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Escenario Primitivas
 		// -------------------------------------------------------------------------------------------------------------------------
@@ -1194,88 +1229,91 @@ int main() {
 		// -------------------------------------------------------------------------------------------------------------------------
 		// ********* BUZZLIGTH YEAR*************
 		// -------------------------------------------------------------------------------------------------------------------------
-
+		// Torso BuzzLightYear 
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
+		modelOp = glm::translate(modelOp, glm::vec3(posX, posY, posZ));//para que se pudiera mover
+		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
+		tmp2 = modelOp = glm::rotate(modelOp, glm::radians(giroMonito), glm::vec3(0.0f, 1.0f, 0.0));//para que pueda rotar
+		staticShader.setMat4("model", modelOp);
+		TorsoBuzz.Draw(staticShader);
 		//cabeza  
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		CabezaBuzz.Draw(staticShader);
-		//BuzzLightYear 
+		//Cola BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
+		modelOp = glm::translate(modelOp, glm::vec3(posX, posY, posZ));//para que se pudiera mover
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
-		staticShader.setMat4("model", modelOp);
-		TorsoBuzz.Draw(staticShader);
-		//BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
-		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
+		tmp2 = modelOp = glm::rotate(modelOp, glm::radians(giroMonito), glm::vec3(0.0f, 1.0f, 0.0));//para que pueda rotar
 		staticShader.setMat4("model", modelOp);
 		ColaBuzz.Draw(staticShader);
-		//BuzzLightYear 
+		// Ala DerBuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AlaDerBuzz.Draw(staticShader);
-		//BuzzLightYear 
+		// Ala Izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AlaIzqBuzz.Draw(staticShader);
-		//BuzzLightYear 
+		//Antebrazo der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AnteDer.Draw(staticShader);
-		//BuzzLightYear 
+		//Antebrazo izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		AnteIzq.Draw(staticShader);
-		//BuzzLightYear 
+		//Brazo der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoDer.Draw(staticShader);
-		//BuzzLightYear 
+		//Brazo izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoIzq.Draw(staticShader);
-		//BuzzLightYear 
+		//mano der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		ManoDer.Draw(staticShader);
-		//BuzzLightYear 
+		//Mano izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		ManoIzq.Draw(staticShader);
-		//BuzzLightYear 
+		//pie der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PieDer.Draw(staticShader);
-		//BuzzLightYear 
+		//pie izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PieIzq.Draw(staticShader);
-		//BuzzLightYear 
+		//Pierna der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaDer.Draw(staticShader);
-		//BuzzLightYear 
+		//Pierna izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaIzq.Draw(staticShader);
-		//BuzzLightYear 
+		// rodilla der BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
 		RodillaDer.Draw(staticShader);
-		//BuzzLightYear 
+		//rodilla izq BuzzLightYear 
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(-15.0f, -1.9f, 0.0f));
 		modelOp = glm::scale(modelOp, glm::vec3(5.0f, 5.0f, 5.0f));
 		staticShader.setMat4("model", modelOp);
@@ -1329,6 +1367,11 @@ int main() {
 		modelOp = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
 		staticShader.setMat4("model", model);
 		puertader.Draw(staticShader);
+
+		// -------------------------------------------------------------------------------------------------------------------------
+		// Tercer Personaje Animacion
+		// -------------------------------------------------------------------------------------------------------------------------
+
 
 		//CHASIS
 		//model = glm::rotate(glm::mat4(1.0f), glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));--------
@@ -1460,6 +1503,10 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 		posX--;
 	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
 		posX++;
+	if (glfwGetKey(window, GLFW_KEY_7) == GLFW_PRESS)
+		posY++;
+	if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
+		posY--;
 	if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
 		rotRodIzq--;
 	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
@@ -1469,9 +1516,25 @@ void my_input(GLFWwindow* window, int key, int scancode, int action, int mode)
 	if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
 		giroMonito++;
 	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
-		lightPosition.x++;
+		lightPosition.y++;
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		lightPosition.x--;
+		lightPosition.y--;
+	if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
+		giroBrazoIzq += 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS)
+		giroBrazoIzq -= 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
+		giroBrazoDer += 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
+		giroBrazoDer -= 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_5) == GLFW_PRESS)
+		rotRodDer += 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_6) == GLFW_PRESS)
+		rotRodDer -= 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
+		giroCabeza += 3.0f;
+	if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+		giroCabeza -= 3.0f;
 
 	//Car animation
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
