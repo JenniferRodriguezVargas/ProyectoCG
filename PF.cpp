@@ -42,7 +42,7 @@ GLFWmonitor* monitors;
 GLuint VBO[3], VAO[3], EBO[3];
 
 //Camera																			//De lejos para ver animacion carro
-Camera camera(glm::vec3(0.0f, 5.0f, 50.0f)); //PIDE LA POSICION INICIAL DENTRO DEL MUNDO VIRTUAL 0.0f, 80.0f, 300.0f
+Camera camera(glm::vec3(0.0f, 50.0f, 300.0f)); //PIDE LA POSICION INICIAL DENTRO DEL MUNDO VIRTUAL 0.0f, 80.0f, 300.0f
 float MovementSpeed = 0.1f;
 GLfloat lastX = SCR_WIDTH / 2.0f,
 		lastY = SCR_HEIGHT / 2.0f;
@@ -136,13 +136,13 @@ float		incX = 0.0f,
 
 
 // MAX_FRAMES= Arreglo que guarda cuadros clave DEPENDIENDO DE LAS QUE SE VAYANA A UTILIZAR
-#define MAX_FRAMES 50
-int i_max_steps = 100;//CANTIDAD DE CUADROS INTERMEDIOS QUE EL SISTEMA VA A CALCULAR
+#define MAX_FRAMES 100
+int i_max_steps = 80;//CANTIDAD DE CUADROS INTERMEDIOS QUE EL SISTEMA VA A CALCULAR
 int i_curr_steps = 0;
 typedef struct _frame
 {
 	//Variables para GUARDAR Key Frames
-	//Variables para GUARDAR Key Frames
+	//Variables para GUARDAR Key Framesfvfdfd
 	float posX;		//Variable para PosicionX
 	float posY;		//Variable para PosicionY
 	float posZ;		//Variable para PosicionZ
@@ -584,7 +584,6 @@ int main() {
 	Model Fuente("resources/objects/Fuente/Fuente.obj");
 	Model Inflable("resources/objects/Inflable/Inflable.obj");
 	Model Brincolin("resources/objects/Brincolin/Brincolin.obj");
-	
 	Model MesasZC("resources/objects/MesasZC/MesasZC.obj");
 	Model SillasZC("resources/objects/SillasZC/SillasZC.obj");
 	Model PisoPasto("resources/objects/PastoZV/PastoZV.obj");
@@ -631,7 +630,7 @@ int main() {
 	Model Wc("resources/objects/Wc/wc.obj");
 	Model PuertasWC("resources/objects/Wc/PuertasWC.obj");
 	Model Lavabo("resources/objects/Lavabo/Lavabo.obj");
-	Model Carriolas("resources/objects/Carriolas/Carriolas.obj");
+	/*Model Carriolas("resources/objects/Carriolas/Carriolas.obj");
 	Model Bebe("resources/objects/Bebe/Bebe.obj");
 	Model BebeFeo("resources/objects/BebeFeo/BebeFeo.obj");
 	Model Abuela1("resources/objects/Abuela1/Abuela1.obj");
@@ -652,7 +651,8 @@ int main() {
 	Model M2("resources/objects/M2/M2.obj");
 	Model M3("resources/objects/M3/M3.obj");
 	Model M4("resources/objects/M4/M4.obj");
-	Model M5("resources/objects/M5/M5.obj");
+	Model M5("resources/objects/M5/M5.obj");*/
+
 	//**************** MODELOS PARA LA ANIMACIONES COMPLEJAS ************************
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/Arm.dae");
 	animacionPersonaje.initShaders(animShader.ID);
@@ -773,7 +773,6 @@ int main() {
 		// note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		myShader.setMat4("projection", projectionOp);
 		/**********/
-
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion
@@ -914,8 +913,6 @@ int main() {
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		Fachadas.Draw(staticShader);
-		
-
 		//Macetas Pasillo Principal vista superior
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		staticShader.setMat4("model", modelOp);
@@ -1137,7 +1134,7 @@ int main() {
 		staticShader.setMat4("model", modelOp);
 		Lavabo.Draw(staticShader);
 		//Carriolas
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
+		/*modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		Carriolas.Draw(staticShader);
 		//Bebe Pelon
@@ -1223,7 +1220,7 @@ int main() {
 		//Mujer 5
 		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
 		staticShader.setMat4("model", modelOp);
-		M5.Draw(staticShader);
+		M5.Draw(staticShader);*/
 		//TERMINE DE IMPORTAR LOS OBJETOS ESTATICOS Y EL MODELO EN GENERAL DE LA PLAZA COMERCIAL
 
 		// -------------------------------------------------------------------------------------------------------------------------
@@ -1231,31 +1228,30 @@ int main() {
 		// -------------------------------------------------------------------------------------------------------------------------
 		
 		// Torso BuzzLightYear 
-		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.9f, 0.0f));
+		modelOp = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, -1.9f, -60.0f));
 		modelOp = glm::translate(modelOp, glm::vec3(posX, posY, posZ));
+		modelOp = glm::rotate(modelOp, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0));
 		tmp2 = modelOp= glm::rotate(modelOp, glm::radians(giroMonito), glm::vec3(0.0f, 1.0f, 0.0));
 		staticShader.setMat4("model", modelOp);
 		TorsoBuzz.Draw(staticShader);
 		// Brazo Der
-		modelOp = glm::translate(tmp2, glm::vec3(0.0f));
+		modelOp = glm::translate(tmp2, glm::vec3(-1.49f, 5.83f, 0.16));
 		modelOp = glm::rotate(modelOp, glm::radians(giroBrazoDer), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoDer.Draw(staticShader);
 		// Brazo Izq
-		modelOp = glm::translate(tmp2, glm::vec3(0.0f));
+		modelOp = glm::translate(tmp2, glm::vec3(1.49f, 5.83f, 0.16));
 		modelOp = glm::rotate(modelOp, glm::radians(giroBrazoIzq), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		BrazoIzq.Draw(staticShader);
 		// Pierna Der
-		modelOp = glm::translate(tmp2, glm::vec3(0.0f));
-		//modelOp = glm::rotate(modelOp, glm::radians(0.0f), glm::vec3(0.0f, 1.0f, 0.0));
-		modelOp = glm::rotate(modelOp, glm::radians(rotRodIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::translate(tmp2, glm::vec3(-0.592, 3.892f, 0.095f));
+		modelOp = glm::rotate(modelOp, glm::radians(rotRodIzq), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaDer.Draw(staticShader);
 		// Pierna Izq
-		modelOp = glm::translate(tmp2, glm::vec3(0.0f));
-		//modelOp = glm::rotate(modelOp, glm::radians(0.0f), glm::vec3(0.0f, 1.0f, 0.0));
-		modelOp = glm::rotate(modelOp, glm::radians(rotRodDer), glm::vec3(0.0f, 1.0f, 0.0f));
+		modelOp = glm::translate(tmp2, glm::vec3(0.592, 3.892f, 0.095f));
+		modelOp = glm::rotate(modelOp, glm::radians(rotRodDer), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", modelOp);
 		PiernaIzq.Draw(staticShader);
 		//Cabeza 
