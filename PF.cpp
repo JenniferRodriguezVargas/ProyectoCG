@@ -189,7 +189,7 @@ void resetElements(void)
 	posX = KeyFrame[0].posX;
 	posY = KeyFrame[0].posY;
 	posZ = KeyFrame[0].posZ;
-
+	 
 	rotRodIzq = KeyFrame[0].rotRodIzq;
 	giroMonito = KeyFrame[0].giroMonito;
 
